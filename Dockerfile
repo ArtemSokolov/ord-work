@@ -20,3 +20,6 @@ RUN R -e 'remotes::install_github("labsyspharm/ordinalRidge")'
 
 RUN echo "gitpod:gitpod" | chpasswd
 USER gitpod
+
+RUN echo "session-default-working-dir=/workspace/ord-work" | sudo tee -a /etc/rstudio/rsession.conf && \
+    echo "session-default-new-project-dir=/workspace/ord-work" | sudo tee -a /etc/rstudio/rsession.conf
