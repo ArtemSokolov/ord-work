@@ -15,6 +15,8 @@ RUN wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-2022.0
 RUN gdebi -n rstudio-server-2022.07.2-576-amd64.deb
 
 RUN R -e 'install.packages("tidyverse")'
+RUN R -e 'install.packages(c("qs", "microbenchmark", "remotes", "pdist", "rsample", "here"))'
+RUN R -e 'remotes::install_github("labsyspharm/ordinalRidge")'
 
 RUN echo "gitpod:gitpod" | chpasswd
 USER gitpod
