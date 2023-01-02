@@ -1,0 +1,7 @@
+image:
+  file: Dockerfile
+ports:
+  - port: 8787
+    onOpen: open-preview
+tasks:
+  - command: sudo /usr/lib/rstudio-server/bin/rstudio-server start
